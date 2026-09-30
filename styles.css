@@ -1,0 +1,200 @@
+:root {
+  --green: #486424;
+  --light-green: #e6eddc;
+  --text: #252a21;
+  --muted: #64705b;
+  --line: #b7c1aa;
+  --background: #f8f7f2;
+  --white: #ffffff;
+  --error: #a52828;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+.form-page {
+  width: min(700px, 90%);
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.form-card {
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background-color: var(--white);
+  box-shadow: 7px 7px 0 var(--light-green);
+}
+
+.eyebrow {
+  color: var(--green);
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.4rem 0;
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+.form-intro > p:last-child {
+  color: var(--muted);
+}
+
+.progress-section {
+  margin: 2rem 0;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+  height: 0.75rem;
+  overflow: hidden;
+  border-radius: 99px;
+  background-color: var(--light-green);
+}
+
+.progress-bar span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--green);
+}
+
+.form-group {
+  margin-bottom: 1.1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background-color: var(--white);
+  color: var(--text);
+  font: inherit;
+}
+
+/* Clear keyboard focus state */
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid #799b45;
+  outline-offset: 2px;
+}
+
+.password-input {
+  position: relative;
+}
+
+.password-input input {
+  padding-right: 5rem;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 0.45rem;
+  transform: translateY(-50%);
+  padding: 0.35rem 0.5rem;
+  border: 0;
+  border-radius: 0.3rem;
+  background-color: var(--light-green);
+  color: var(--green);
+  cursor: pointer;
+  font: inherit;
+  font-weight: bold;
+}
+
+.toggle-password:hover {
+  background-color: #d2dfc0;
+}
+
+.helper-text {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.error-message {
+  min-height: 1.25rem;
+  margin-top: 0.25rem;
+  color: var(--error);
+  font-size: 0.85rem;
+}
+
+.submit-button {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.85rem;
+  border: 0;
+  border-radius: 0.45rem;
+  background-color: var(--green);
+  color: var(--white);
+  cursor: pointer;
+  font: inherit;
+  font-weight: bold;
+}
+
+.submit-button:hover {
+  background-color: #38511b;
+}
+
+.requirements {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  background-color: var(--light-green);
+}
+
+.requirements h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.requirements ul {
+  display: grid;
+  gap: 0.45rem;
+  list-style: none;
+}
+
+.requirements li::before {
+  margin-right: 0.5rem;
+  content: "○";
+}
+
+.requirements .complete::before {
+  color: var(--green);
+  content: "✓";
+  font-weight: bold;
+}
+
+@media (max-width: 450px) {
+  .form-page {
+    width: min(92%, 700px);
+    padding: 2rem 0;
+  }
+}
